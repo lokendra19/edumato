@@ -1,0 +1,170 @@
+body {
+	margin: auto;
+}
+.imagecontainer {
+	background-image: url(https://i.postimg.cc/hj2nz4fj/pexels-jonathan-borba-2983101.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	border: 5px solid rgb(0, 0, 0);
+	width: 100%;
+	 
+	 
+}
+
+#logo {
+	text-align: center;
+	color: crimson;
+	font-size: 90px;
+	height: 150px;
+	width: 150px;
+	background: rgb(199, 174, 174);
+	border-radius: 55%;
+	margin: auto;
+	margin-top: 80px;
+	margin-bottom: 40px;
+}
+
+#heading {
+	text-align: center;
+	color: rgb(245, 183, 13);
+	font-size: 36px;
+}
+
+.dropdown {
+	height: 33px;
+	width: 200px;
+	font-size: 20px;
+}
+
+.myfont {
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+		'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.class_logo {
+	height: 40px;
+	width: 40px;
+}
+
+/*Quick Search CSS*/
+
+.wd {
+	background-color: #ffffff;
+	height: 500px;
+}
+.quickSearchContainer {
+	margin-left: 115px;
+	margin-top: 50px;
+ 
+	/* background-color: red; For browsers that do not support gradients */
+	/* background-image: linear-gradient(red, yellow); */
+}
+
+.quickSearchHeading {
+	text-align: left;
+	color: #d4dced;
+	font-size: 30p;
+	font-weight: bold;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.quickSearchSubheading {
+	color: rgb(247, 84, 84);
+	font-size: 20p;
+	font-weight: normal;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	line-height: 0.01;
+}
+.tileContainer {
+	min-height:  200px;
+	height: 150px; /*style="width: 400px; min-height: 200px; float: left;"*/
+	float:left;
+	width: 400px;
+	/*background-color: rgb(200, 22, 22);*/
+	display: inline-block;
+	margin-top: 10px;
+	margin-bottom: 30px;
+	margin-right: 3%;
+	box-shadow: 0px 3px 30px black;
+	/* background-color: rgb(255, 247, 0); */
+	background-image: linear-gradient(rgb(220, 81, 81), rgb(0, 0, 0));
+	/* background-color: rgb(18, 18, 18); */
+}
+
+.tilecomponent1 {
+	width: 40%;
+	float: left;
+}
+
+.tilecomponent2 {
+	width: 40%;
+	float: left;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.componentHeading {
+	text-align: left;
+	color: rgb(239, 232, 46);
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.componentSubHeading {
+	color: rgb(255, 255, 255);
+	font-size: 23px;
+	font-family: serif;
+	line-height: 1;
+}
+
+.tileContainer:hover {
+	transform: scale(1.1, 1.1);
+}
+/* about information start  */
+.about-container {
+	background-color: rgb(18, 18, 18);
+	height: 500px;
+	width: 100vw;
+}
+.about-image {
+	height: 500px;
+	width: 50vw;
+	float: left;
+	margin-left: 50px;
+}
+.about-data {
+	/* background-color: rgb(18, 18, 18) */
+	margin-top: 100px;
+	color:white;
+	height: 300px;
+	width: 300px;
+	float: left;
+}
+.btn-warning {
+	border-radius: 40px;
+}
+.details {
+	background-color: rgb(18, 18, 18);
+	color: white;
+}
+.row {
+	margin-top: 50px;
+}
+.social img {
+	width: 30px;
+	height: 30px;
+}
+
+/* .solid {
+	border-style: solid;
+} */
+#booktable {
+	color: rgb(146, 55, 55);
+	font-family: cursive;
+}
+
+.input-data {
+	margin: 10px;
+	width: 500px;
+	height: 40px;
+}
