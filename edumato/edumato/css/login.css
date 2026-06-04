@@ -1,47 +1,118 @@
-body{
-     
-    background-color:rgba(231, 216, 216,0.5);
+/* Login & Register Pages */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  padding: 120px 20px 60px;
+  position: relative;
+  overflow: hidden;
 }
-.log{
-    margin: 50px 320px;
-    height:60vh;
-    width: 40vw;
-    border: 2px solid black;
-    background-color:aqua;
+.auth-page::before {
+  content: '';
+  position: absolute;
+  top: -300px; left: -300px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(212,175,55,.07) 0%, transparent 70%);
+  pointer-events: none;
 }
-.log p{
-    margin-left: 175px;
-    font-size: 50px;
+.auth-page::after {
+  content: '';
+  position: absolute;
+  bottom: -200px; right: -200px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(212,175,55,.05) 0%, transparent 70%);
+  pointer-events: none;
 }
-.log img{
-    height: 60px;
+.auth-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 500px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(212,175,55,.2);
+  border-radius: 24px;
+  padding: 50px 44px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 30px 80px rgba(0,0,0,.5);
+  animation: fadeUp .7s ease both;
 }
-.input{
-    margin-left: 175px;
-    /* border: 2px solid red; */
-    border-radius: 60px;
-    padding: 10px;
-    font-size: 10px;
+.auth-logo {
+  text-align: center;
+  margin-bottom: 32px;
 }
-button{
-    margin-top: 50px;
-    margin-left: 120px;
-    background-color: green;
-    /* align-items: center;
-    justify-content: center; */
-    height: 30px;
-    width: 100px;
+.auth-logo .brand {
+  font-family: var(--font-d);
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #fff;
 }
-.forgot{
-    margin-top: 10px;
-    margin-left: -500px;
-    
+.auth-logo .brand em { font-style: normal; color: var(--gold); font-size: 2.6rem; }
+.auth-logo p { color: var(--muted); font-size: .88rem; margin-top: 6px; }
+
+.auth-title {
+  font-family: var(--font-d);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
 }
-span{
-    /* align-items: center; */
-    margin-left: -1175px;
-    color: white;
+.auth-sub { color: var(--muted); font-size: .88rem; margin-bottom: 30px; }
+
+.auth-field { margin-bottom: 18px; }
+.auth-field label { display: block; font-size: .78rem; color: var(--muted); letter-spacing: .5px; margin-bottom: 7px; text-transform: uppercase; }
+.auth-field input, .auth-field select, .auth-field textarea {
+  width: 100%;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  color: var(--text);
+  padding: 13px 16px;
+  border-radius: 10px;
+  font-size: .93rem;
+  font-family: var(--font-b);
+  outline: none;
+  transition: border-color .3s, box-shadow .3s;
 }
-span a{
-    color: brown;
+.auth-field input:focus, .auth-field select:focus, .auth-field textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(212,175,55,.15);
+}
+.auth-field input::placeholder { color: rgba(255,255,255,.25); }
+.auth-field .hint { font-size: .75rem; color: var(--muted); margin-top: 5px; }
+
+.radio-group { display: flex; gap: 20px; align-items: center; }
+.radio-group label { display: flex; align-items: center; gap: 7px; color: var(--muted); font-size: .9rem; cursor: pointer; text-transform: none; letter-spacing: 0; }
+.radio-group input[type=radio] { accent-color: var(--gold); width: 16px; height: 16px; }
+
+.auth-submit {
+  width: 100%;
+  padding: 14px;
+  background: var(--gold);
+  color: #000;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: var(--font-b);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all .3s;
+  margin-top: 8px;
+  letter-spacing: .5px;
+}
+.auth-submit:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212,175,55,.4);
+}
+.auth-links { text-align: center; margin-top: 22px; }
+.auth-links p { color: var(--muted); font-size: .88rem; }
+.auth-links a { color: var(--gold); font-weight: 600; text-decoration: none; transition: color .3s; }
+.auth-links a:hover { color: #fff; }
+.auth-divider {
+  display: flex; align-items: center; gap: 12px; margin: 24px 0;
+  color: var(--muted); font-size: .8rem;
+}
+.auth-divider::before, .auth-divider::after {
+  content: ''; flex: 1; height: 1px; background: rgba(255,255,255,.1);
 }

@@ -1,64 +1,72 @@
-/* Reset some default styles */
-body,
-h1,
-h2,
-p,
-ul {
-	margin: 0;
-	padding: 0;
+/* Blog Page */
+.blog-section {
+  padding: 80px 5vw;
+  background: var(--bg);
+  min-height: 60vh;
 }
-
-body {
-	font-family: Arial, sans-serif;
-	line-height: 1.5;
+.blog-grid {
+  max-width: 1100px;
+  margin: 50px auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
 }
-
-header {
-	background-color: #f1f1f1;
-	padding: 20px;
+.blog-card {
+  background: var(--surface2);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform .3s, box-shadow .3s;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
 }
-
-nav ul {
-	list-style-type: none;
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0,0,0,.4);
+  border-color: rgba(212,175,55,.25);
 }
-
-nav ul li {
-	display: inline;
-	margin-right: 10px;
+.blog-card-img {
+  height: 220px;
+  overflow: hidden;
 }
-
-nav ul li a {
-	text-decoration: none;
-	color: #333;
+.blog-card-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .5s;
 }
-
-main {
-	padding: 20px;
+.blog-card:hover .blog-card-img img { transform: scale(1.07); }
+.blog-card-body { padding: 26px; flex: 1; display: flex; flex-direction: column; }
+.blog-tag {
+  display: inline-block;
+  background: rgba(212,175,55,.15);
+  color: var(--gold);
+  font-size: .73rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
 }
-
-article {
-	margin-bottom: 40px;
+.blog-card-title {
+  font-family: var(--font-d);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.35;
+  margin-bottom: 12px;
 }
-
-article h2 {
-	margin-bottom: 10px;
+.blog-card-excerpt { color: var(--muted); font-size: .88rem; line-height: 1.7; flex: 1; }
+.blog-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,.07);
+  font-size: .8rem;
+  color: var(--muted);
 }
-
-.post-meta {
-	font-size:40px;
-	color:rgb(73, 53, 65);
-}
-.para{
-	color: white;
-}
-
-.author {
-	font-weight: bold;
-	color:blue ;
-}
-
-footer {
-	background-color: #f1f1f1;
-	padding: 20px;
-	text-align: center;
-}
+.blog-card-meta i { color: var(--gold); }
+.blog-author { font-weight: 600; color: var(--gold); }

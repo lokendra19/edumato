@@ -1,51 +1,140 @@
-:root{
-    --navbar-height:59px;
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --gold:      #D4AF37;
+  --gold-dim:  rgba(212,175,55,0.25);
+  --bg:        #080808;
+  --surface:   #111111;
+  --surface2:  #1a1a1a;
+  --text:      #f0ece4;
+  --muted:     rgba(240,236,228,0.55);
+  --radius:    12px;
+  --font-d:    'Playfair Display', Georgia, serif;
+  --font-b:    'Inter', sans-serif;
+  --font-s:    'Dancing Script', cursive;
 }
 
-#navbar{
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-b);
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #111; }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* ── NAV ─────────────────────────────── */
+.main-nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 999;
+  padding: 0 5vw;
+  transition: background .4s, box-shadow .4s;
+}
+.main-nav.scrolled {
+  background: rgba(8,8,8,.94);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 2px 30px rgba(0,0,0,.6);
+  border-bottom: 1px solid var(--gold-dim);
+}
+.nav-inner {
+  max-width: 1400px;
+  margin: auto;
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-brand {
+  font-family: var(--font-d);
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: .5px;
+}
+.nav-brand em {
+  font-style: normal;
+  color: var(--gold);
+  font-size: 2.3rem;
+  line-height: 1;
+}
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+}
+.nav-menu a {
+  font-size: .875rem;
+  font-weight: 500;
+  letter-spacing: .4px;
+  color: rgba(255,255,255,.8);
+  text-decoration: none;
+  padding: 7px 13px;
+  border-radius: 6px;
+  position: relative;
+  transition: color .3s;
+}
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 2px; left: 13px; right: 13px;
+  height: 1.5px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s ease;
+}
+.nav-menu a:hover, .nav-menu a.active { color: var(--gold); }
+.nav-menu a:hover::after, .nav-menu a.active::after { transform: scaleX(1); }
+
+.nav-btn {
+  background: var(--gold) !important;
+  color: #000 !important;
+  font-weight: 700 !important;
+  padding: 8px 22px !important;
+  border-radius: 30px !important;
+  transition: all .3s !important;
+  box-shadow: 0 0 0 rgba(212,175,55,0) !important;
+}
+.nav-btn::after { display: none !important; }
+.nav-btn:hover {
+  background: #fff !important;
+  box-shadow: 0 6px 20px rgba(212,175,55,.45) !important;
+  transform: translateY(-2px);
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.burger span { display: block; width: 25px; height: 2px; background: #fff; border-radius: 2px; transition: all .3s; }
+
+@media (max-width: 920px) {
+  .burger { display: flex; }
+  .nav-menu {
+    position: fixed;
+    top: 78px; right: -100%;
     flex-direction: column;
-    display: flex;
-    align-items: center;
-    position: sticky;
-    top: 5px;
-  
+    align-items: flex-start;
+    background: rgba(8,8,8,.98);
+    backdrop-filter: blur(20px);
+    width: 270px;
+    height: calc(100vh - 78px);
+    padding: 36px 28px;
+    gap: 14px;
+    transition: right .4s ease;
+    border-left: 1px solid var(--gold-dim);
+  }
+  .nav-menu.open { right: 0; }
+  .nav-menu a { font-size: 1rem; padding: 10px 0; }
 }
- 
-#navbar::before{
-    content:" ";
-    background-color: black;
-    /* position: absolute; */
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-    opacity: 0.7;
-
-}
-#navbar ul{
-    display:flex;
-
-}
-#navbar ul li{
-    list-style: none;
-    font-size:30px;
-
-}
-#navbar ul li a{
-    font-size: 20px;
-    padding: 0px 7px;
-    padding-bottom: 8px;
-    color:white;
-    display: block;
-    padding: 3px 22px;
-    border-radius: 20px;
-    text-decoration: none;
-   
-}
-/* #navbar ul li a:hover{
-    color:yellow;
-    background-color: white;
-}
- 
-  */
