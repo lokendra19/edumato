@@ -1,29 +1,12 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "edumato/edumato/*.php",
-      "use": "vercel-php@0.6.0"
-    },
-    {
-      "src": "edumato/edumato/css/**",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "edumato/edumato/js/**",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "edumato/edumato/images/**",
-      "use": "@vercel/static"
+  "functions": {
+    "api/*.php": {
+      "runtime": "vercel-php@0.9.0"
     }
-  ],
+  },
   "routes": [
-    { "src": "/css/(.*)",    "dest": "/edumato/edumato/css/$1" },
-    { "src": "/js/(.*)",     "dest": "/edumato/edumato/js/$1" },
-    { "src": "/images/(.*)", "dest": "/edumato/edumato/images/$1" },
-    { "src": "^/$",          "dest": "/edumato/edumato/index.php" },
-    { "src": "^/home\\.php$","dest": "/edumato/edumato/index.php" },
-    { "src": "^/([a-zA-Z0-9_-]+\\.php)$", "dest": "/edumato/edumato/$1" }
+    { "src": "^/$",                           "dest": "/api/index.php" },
+    { "src": "^/home\\.php$",                 "dest": "/api/index.php" },
+    { "src": "^/([a-zA-Z0-9_-]+\\.php)$",    "dest": "/api/$1" }
   ]
 }
